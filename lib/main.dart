@@ -3,5 +3,6 @@ import 'package:animated_counter_app/app.dart';
 import 'package:flutter/material.dart';
 
 void main(List<String> args) {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(App(repository: RoutesRepository()));
 }
