@@ -1,13 +1,27 @@
 part of 'theme_mode_cubit.dart';
 
 class ThemeModeState extends Equatable {
-  bool isLightMode;
+  final bool isLightMode;
 
-  ThemeModeState._({
+  const ThemeModeState({required this.isLightMode});
+  const ThemeModeState._({
     this.isLightMode = true,
   });
-  ThemeModeState.lightMode() : this._();
-  ThemeModeState.darkMode() : this._(isLightMode: false);
+  const ThemeModeState.lightMode() : this._();
+  const ThemeModeState.darkMode() : this._(isLightMode: false);
+
+  Map<String, dynamic> toMap() {
+    return {
+      'switchValue': isLightMode,
+    };
+  }
+
+  factory ThemeModeState.fromMap(Map<String, dynamic> map) {
+    return ThemeModeState(
+      isLightMode: map['switchValue'] ?? false,
+    );
+  }
+
   @override
   List<Object?> get props => [isLightMode];
 }

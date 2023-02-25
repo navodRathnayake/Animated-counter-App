@@ -22,11 +22,11 @@ class ThemeModeCubit extends HydratedCubit<ThemeModeState> {
 
   @override
   ThemeModeState? fromJson(Map<String, dynamic> json) {
-    return json['value'] as ThemeModeState;
+    return ThemeModeState.fromMap(json);
   }
 
   @override
   Map<String, dynamic>? toJson(ThemeModeState state) {
-    return {'value': state};
+    return state.toMap();
   }
 }
