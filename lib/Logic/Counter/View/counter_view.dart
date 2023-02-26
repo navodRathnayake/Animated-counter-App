@@ -1,8 +1,13 @@
 library counter_view;
 
+import 'package:animated_counter_app/Logic/Counter/View/widgets/app_slider.dart';
 import 'package:animated_counter_app/Logic/Theme%20Mode/theme_mode_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:simple_animations/simple_animations.dart';
+
+import 'widgets/buble_animation.dart';
+import 'widgets/theme_toggle_switch.dart';
 
 class CounterView extends StatelessWidget {
   const CounterView({super.key});
@@ -19,26 +24,11 @@ class CounterView extends StatelessWidget {
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Column(
-            children: [
-              BlocBuilder<ThemeModeCubit, ThemeModeState>(
-                builder: (context, state) {
-                  return Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      state.isLightMode
-                          ? const Icon(Icons.light_mode_outlined)
-                          : const Icon(Icons.dark_mode_outlined),
-                      Switch(
-                          value:
-                              context.read<ThemeModeCubit>().state.isLightMode,
-                          onChanged: BlocProvider.of<ThemeModeCubit>(context,
-                                  listen: false)
-                              .toggleSwitchChanged)
-                    ],
-                  );
-                },
-              ),
+          child: Stack(
+            children: const [
+              BubleAnimation(),
+              ThemeToggleSwitch(),
+              AppSlider()
             ],
           ),
         ),

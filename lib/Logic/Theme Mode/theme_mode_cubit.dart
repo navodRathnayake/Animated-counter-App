@@ -6,16 +6,16 @@ import 'package:hydrated_bloc/hydrated_bloc.dart';
 part 'theme_mode_state.dart';
 
 class ThemeModeCubit extends HydratedCubit<ThemeModeState> {
-  ThemeModeCubit() : super(ThemeModeState.lightMode());
+  ThemeModeCubit() : super(const ThemeModeState.lightMode());
 
   void toggleSwitchChanged(bool isOn) {
     switch (isOn) {
       case true:
-        emit(ThemeModeState.lightMode());
+        emit(const ThemeModeState.lightMode());
         debugPrint('Light mode has activated');
         break;
       case false:
-        emit(ThemeModeState.darkMode());
+        emit(const ThemeModeState.darkMode());
         debugPrint('dark mode has activated');
     }
   }

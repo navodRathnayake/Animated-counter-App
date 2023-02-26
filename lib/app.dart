@@ -3,6 +3,7 @@ import 'package:animated_counter_app/Logic/Route/routes_bloc.dart';
 import 'package:animated_counter_app/Logic/Theme%20Mode/theme_mode_cubit.dart';
 import 'package:animated_counter_app/Routes/routes.dart';
 import 'package:animated_counter_app/Splash/Repository/splash_stream.dart';
+import 'package:animated_counter_app/Splash/View/splash.dart';
 import 'package:animated_counter_app/Theme/Dark%20Theme/dark_theme.dart';
 import 'package:animated_counter_app/Theme/Light%20Theme/light_theme.dart';
 import 'package:flutter/material.dart';
@@ -51,6 +52,10 @@ class AppView extends StatelessWidget {
                 if (state.status == RouteStatus.logged) {
                   _navigator.pushAndRemoveUntil<void>(
                       CounterView.route(), (route) => false);
+                }
+                if (state.status == RouteStatus.initial) {
+                  _navigator.pushAndRemoveUntil(
+                      Splash.route(), (route) => false);
                 }
               },
               child: child,

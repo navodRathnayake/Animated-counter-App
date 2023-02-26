@@ -6,7 +6,7 @@ class DarkTheme {
   static Color backgroundColor = const Color(0xff1a2127);
   static Color primaryColor = const Color(0xff1a2127);
   static Color accentColor = Colors.blueGrey.shade600;
-  static Color particleColor = const Color(0x441c2a30);
+  static Color particleColor = Color.fromARGB(255, 255, 255, 255);
 
   static final value = ThemeData(
     brightness: Brightness.dark,
