@@ -7,6 +7,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:simple_animations/simple_animations.dart';
 
 import 'widgets/buble_animation.dart';
+import 'widgets/flare_animation.dart';
 import 'widgets/theme_toggle_switch.dart';
 
 class CounterView extends StatelessWidget {
@@ -27,8 +28,9 @@ class CounterView extends StatelessWidget {
           child: Stack(
             children: const [
               BubleAnimation(),
+              FlareAnimation(),
               ThemeToggleSwitch(),
-              AppSlider()
+              AppSlider(),
             ],
           ),
         ),

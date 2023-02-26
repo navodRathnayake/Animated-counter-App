@@ -42,6 +42,7 @@ dependencies:
   simple_animations: ^3.0.0
   sizer: ^2.0.15
   counter_slider: ^0.1.0
+  flare_flutter: ^3.0.2
 
 dev_dependencies:
   flutter_test:
