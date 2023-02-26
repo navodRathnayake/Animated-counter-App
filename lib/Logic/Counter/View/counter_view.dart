@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:simple_animations/simple_animations.dart';
 
+import '../Cubit/counter_cubit.dart';
 import 'widgets/buble_animation.dart';
 import 'widgets/flare_animation.dart';
 import 'widgets/theme_toggle_switch.dart';
@@ -25,13 +26,16 @@ class CounterView extends StatelessWidget {
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Stack(
-            children: const [
-              BubleAnimation(),
-              FlareAnimation(),
-              ThemeToggleSwitch(),
-              AppSlider(),
-            ],
+          child: BlocProvider(
+            create: (context) => CounterCubit(),
+            child: Stack(
+              children: const [
+                BubleAnimation(),
+                FlareAnimation(),
+                ThemeToggleSwitch(),
+                AppSlider(),
+              ],
+            ),
           ),
         ),
       ),
