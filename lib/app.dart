@@ -62,7 +62,6 @@ class AppView extends StatelessWidget {
             );
           },
           onGenerateRoute: Routes.onGeneratedRoutes,
-          home: const CounterView(),
         );
       },
     );
